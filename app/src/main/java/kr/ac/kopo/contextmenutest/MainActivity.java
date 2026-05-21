@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity
     Button btnRotation, btnZoomin;
     LinearLayout linear;
 
-    float rotationDegree;   // 수정
+    float rotationDegree;   // 회전 각도
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                dialog.setTitle("대화상자연습");
+                dialog.setTitle("대화 상자 연습");
                 dialog.setMessage("대화상자 내의 내용 부분입니다");
                 dialog.setIcon(R.drawable.icon);
                 dialog.show();
@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
+    public boolean onContextItemSelected(@NonNull MenuItem item)
+    {
          super.onContextItemSelected(item);
          if(item.getItemId() == R.id.item_bg_orange)
          {
@@ -93,7 +94,7 @@ public class MainActivity extends AppCompatActivity
              return true;
          } else if(item.getItemId() == R.id.item_btn_rotation )
          {
-             rotationDegree += 45.0f;   // 누를 때마다 45도 증가
+             rotationDegree = rotationDegree + 45.0f;   // 누를 때마다 45도 증가
              btnZoomin.setRotation(rotationDegree);
              return true;
          }  else if(item.getItemId() == R.id.item_btn_zoomin )
