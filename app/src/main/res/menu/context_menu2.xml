@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_btn_rotation"
+        android:title="버튼 회전"
+        />
+    <item
+        android:id="@+id/item_btn_zoomin"
+        android:title="버튼 확대"
+        />
+</menu>

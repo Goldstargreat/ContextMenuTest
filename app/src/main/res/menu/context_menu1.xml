@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_bg_red"
+        android:title="빨강"
+    />
+    <item
+        android:id="@+id/item_bg_orange"
+        android:title="주황"
+        />
+    <item
+        android:id="@+id/item_bg_yellow"
+        android:title="노랑"
+        />
+</menu>
