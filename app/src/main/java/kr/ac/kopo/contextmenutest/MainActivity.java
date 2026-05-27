@@ -20,7 +20,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity
 {
     Button btnRotation, btnZoomin;
-    LinearLayout linear;
+    LinearLayout linear; // LinearLayout 타입의 변수를 linear라는 이름으로 선언
 
     float rotationDegree;   // 회전 각도
 
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
          if(item.getItemId() == R.id.item_bg_orange)
          {
              linear.setBackgroundColor(Color.rgb(255,165,0));
-             return true;
+             return true; // 처리 완료, 이벤트 소비
          } else if (item.getItemId() == R.id.item_bg_yellow )
          {
              linear.setBackgroundColor(Color.YELLOW);
@@ -115,6 +115,6 @@ public class MainActivity extends AppCompatActivity
              }
              return true;
          }
-        return false;
+        return false; // 조건이 맞는게 하나도 없으면 ❌ 처리 안 됨, 이벤트를 상위로 넘김
     }
 }
