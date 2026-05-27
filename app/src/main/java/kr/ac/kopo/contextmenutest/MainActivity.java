@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        btnRotation = findViewById(R.id.btn_bg);
-        btnZoomin = findViewById(R.id.btn_change);
-        linear = findViewById(R.id.main);
+        btnRotation = findViewById(R.id.btn_bg); // "배경색 변경" 버튼 연결
+        btnZoomin = findViewById(R.id.btn_change); // "버튼 변경" 버튼 연결
+        linear = findViewById(R.id.main); // 전체 레이아웃 연결
         Button btnAlert = findViewById(R.id.btn_alert);
-        btnAlert.setOnClickListener(new View.OnClickListener()
+        btnAlert.setOnClickListener(new View.OnClickListener() // 대화상자 클릭 이벤트 등록
         {
             @Override
             public void onClick(View v)
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        registerForContextMenu(btnRotation);
+        registerForContextMenu(btnRotation); // 두 버튼에 컨텍스트 메뉴 등록
         registerForContextMenu(btnZoomin);
 
     }
@@ -67,12 +67,12 @@ public class MainActivity extends AppCompatActivity
         if(v == btnRotation)
         {
             menu.setHeaderTitle("배경색 변경");
-            menuInflater.inflate(R.menu.context_menu1, menu);
+            menuInflater.inflate(R.menu.context_menu1, menu);  // context_menu1 표시 (배경색 변경)
         }
         if(v == btnZoomin)
         {
             menu.setHeaderTitle("버튼 변경");
-            menuInflater.inflate(R.menu.context_menu2, menu);
+            menuInflater.inflate(R.menu.context_menu2, menu); // context_menu2 표시 (버튼 변경)
         }
     }
 
@@ -97,9 +97,22 @@ public class MainActivity extends AppCompatActivity
              rotationDegree = rotationDegree + 45.0f;   // 누를 때마다 45도 증가
              btnZoomin.setRotation(rotationDegree);
              return true;
-         }  else if(item.getItemId() == R.id.item_btn_zoomin )
+         }  else if (item.getItemId() == R.id.item_btn_zoomin)
          {
-             btnZoomin.setScaleX(2);
+             float currentScale = btnZoomin.getScaleX();
+             if (currentScale < 8.0f)
+             {
+                 btnZoomin.setScaleX(currentScale * 2);
+             }
+             return true;
+         }
+         else if (item.getItemId() == R.id.item_btn_zoomout)  // 추가
+         {
+             float currentScale = btnZoomin.getScaleX();
+             if (currentScale > 0.25f)
+             {
+                 btnZoomin.setScaleX(currentScale / 2);
+             }
              return true;
          }
         return false;

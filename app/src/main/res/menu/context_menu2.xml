@@ -8,4 +8,9 @@
         android:id="@+id/item_btn_zoomin"
         android:title="버튼 확대"
         />
+    <item
+        android:id="@+id/item_btn_zoomout"
+        android:title="버튼 축소" />  <!--  축소 기능 추가 -->
 </menu>
+
+<!--버튼 변경 메뉴-->
